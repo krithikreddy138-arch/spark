@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070911" />
+    <meta name="description" content="SPARK is a free, offline project idea generator: 49 curated, buildable prompts filtered by category, difficulty and time — with save, copy and build-roadmap tools for makers." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SPARK — Project Idea Generator" />
+    <meta property="og:description" content="49 curated, buildable project prompts. No API keys. No blank canvas. Just start." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SPARK — Project Idea Generator" />
+    <meta name="twitter:description" content="49 curated, buildable project prompts. No API keys. No blank canvas. Just start." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070911'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%2355e7df'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+    <title>SPARK — Project Idea Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <noscript><p style="margin:0;padding:16px;text-align:center;background:#111625;color:#eef3ff;font:13px monospace">SPARK needs JavaScript enabled to generate ideas.</p></noscript>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="SPARK home"><span class="brand-mark">✦</span><span>SPARK</span><small>IDEA ENGINE</small></a>
+      <div class="top-actions"><span class="status-dot"></span><span>LOCAL MODE</span><button class="icon-button" id="savedNav" type="button" aria-label="Open saved ideas">♡ <span id="savedCount">0</span></button></div>
+    </header>
+
+    <main id="top" class="shell">
+      <section class="hero">
+        <div class="eyebrow"><span>01</span> CREATIVE PROTOCOL // ONLINE</div>
+        <h1>Find your next<br /><em>build.</em></h1>
+        <p class="hero-copy">Curated project prompts for curious minds.<br />No API keys. No blank canvas. Just start.</p>
+        <div class="hero-controls">
+          <button class="primary-button" id="generateButton" type="button"><span class="button-icon">✦</span> GENERATE IDEA <span class="button-arrow">↗</span></button>
+          <button class="secondary-button" id="surpriseButton" type="button"><span>⤨</span> SURPRISE ME</button>
+        </div>
+        <div class="hero-meta"><span><b id="ideaTotal">49</b> curated ideas</span><span class="meta-divider"></span><span>100% offline</span><span class="meta-divider"></span><span>made for makers</span></div>
+      </section>
+
+      <section class="workspace-grid">
+        <aside class="filters-panel panel">
+          <div class="panel-heading"><div><span class="section-kicker">CONTROL DECK</span><h2>Shape the signal</h2></div><span class="pulse-icon">◉</span></div>
+          <div class="filter-group"><label>01 / CATEGORY</label><div class="chip-grid" id="categoryFilters"></div></div>
+          <div class="filter-group"><label>02 / DIFFICULTY</label><div class="segmented" id="difficultyFilters"></div></div>
+          <div class="filter-group"><label>03 / TIME COMMITMENT</label><div class="segmented time-grid" id="timeFilters"></div></div>
+          <div class="filter-group team-toggle"><label>04 / TEAM MODE</label><button class="team-button" id="teamButton" type="button" aria-pressed="false"><span class="team-icon">⚯</span><span><b>BUILD WITH A CREW</b><small>Ideas for 2–5 people</small></span><i>OFF</i></button></div>
+          <div class="filter-footer"><button class="text-button" id="resetButton" type="button">↺ RESET FILTERS</button><span class="match-count"><b id="matchCount">49</b> MATCHES</span></div>
+        </aside>
+
+        <section class="result-column" aria-live="polite">
+          <div class="result-header"><div><span class="section-kicker">CURRENT TRANSMISSION</span><h2>Your next project</h2></div><span class="result-number" id="resultNumber">#001</span></div>
+          <article class="idea-card panel" id="ideaCard"></article>
+          <div class="quick-actions"><button class="action-button" id="saveButton" type="button">♡ <span>SAVE IDEA</span></button><button class="action-button" id="copyButton" type="button">▣ <span>COPY DETAILS</span></button><button class="action-button" id="roadmapButton" type="button">⌁ <span>BUILD ROADMAP</span></button></div>
+          <div class="roadmap panel hidden" id="roadmapPanel"></div>
+        </section>
+      </section>
+
+      <section class="saved-section panel" id="savedSection">
+        <div class="saved-heading"><div><span class="section-kicker">YOUR COLLECTION</span><h2>Saved ideas <span id="savedHeadingCount">(0)</span></h2></div><button class="text-button" id="clearSavedButton" type="button">CLEAR ALL</button></div>
+        <div class="saved-list" id="savedList"><div class="empty-state"><span>♡</span><p>Nothing saved yet.</p><small>Bookmark a promising signal and it will appear here.</small></div></div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
