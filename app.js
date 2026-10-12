@@ -52,6 +52,8 @@ const catalog = [
 ];
 
 const ideas = catalog.map((row, index) => ({id:index+1,title:row[0],category:row[1],difficulty:row[2],time:row[3],description:row[4],stack:row[5],features:row[6],challenge:row[7],purpose:`${row[4]} This is a small, demonstrable build with a clear user moment.`,teamRoles:['Product + UX / define the flow','Frontend / build the interface','Backend or hardware / make the core work','QA + demo / test and tell the story']}));
+const CONSENT_KEY='spark-consent';
+let consent=null;try{consent=localStorage.getItem(CONSENT_KEY)}catch{}
 const state={category:'All',difficulty:'All',time:'All',team:false,current:null,history:[],saved:loadSaved()};
 const $=id=>document.getElementById(id);
 const categories=['All','Web Development','AI/ML','Games','Automation','Hardware','Mobile Apps','Just for Fun'];
@@ -65,7 +67,7 @@ function loadSaved(){
     return ideas.filter(idea=>ids.has(idea.id));
   }catch{return []}
 }
-function saveLocal(){try{localStorage.setItem('spark-saved',JSON.stringify(state.saved.map(idea=>idea.id)))}catch{showToast('Saved for this session only')}}
+function saveLocal(){if(consent==='denied'){showToast('Saving is off — this idea lasts for this session only');return}try{localStorage.setItem('spark-saved',JSON.stringify(state.saved.map(idea=>idea.id)))}catch{showToast('Saved for this session only')}}
 let toastTimer;
 function showToast(message){const toast=$('toast');clearTimeout(toastTimer);toast.textContent=message;toast.classList.add('show');toastTimer=setTimeout(()=>toast.classList.remove('show'),3500)}
 function renderButtons(){
@@ -122,3 +124,7 @@ function showRoadmap(){const i=state.current;if(!i)return;const expanded=$('road
 document.addEventListener('click',e=>{const filter=e.target.closest('[data-filter]');if(filter){state[filter.dataset.filter]=filter.dataset.value;renderButtons();const stillMatches=state.current&&matchingIdeas().some(i=>i.id===state.current.id);if(stillMatches)renderSaved();else chooseIdea();return}const remove=e.target.closest('[data-remove]');if(remove){state.saved=state.saved.filter(i=>i.id!==Number(remove.dataset.remove));saveLocal();renderSaved();if(state.current)renderSaveButton();return}});
 $('generateButton').addEventListener('click',()=>chooseIdea());$('surpriseButton').addEventListener('click',()=>chooseIdea(true));$('resetButton').addEventListener('click',()=>{state.category='All';state.difficulty='All';state.time='All';state.team=false;renderButtons();renderSaved();chooseIdea()});$('teamButton').addEventListener('click',()=>{state.team=!state.team;renderButtons();renderSaved();chooseIdea()});$('saveButton').addEventListener('click',toggleSave);$('copyButton').addEventListener('click',copyCurrent);$('roadmapButton').addEventListener('click',showRoadmap);$('savedNav').addEventListener('click',()=>$('savedSection').scrollIntoView({behavior:'smooth'}));$('clearSavedButton').addEventListener('click',()=>{if(state.saved.length){state.saved=[];saveLocal();renderSaved();if(state.current)renderSaveButton();showToast('Collection cleared')}});
 renderButtons();renderSaved();chooseIdea();
+const banner=$('consentBanner');if(banner&&!consent)banner.hidden=false;
+$('consentAccept')?.addEventListener('click',()=>{consent='granted';try{localStorage.setItem(CONSENT_KEY,'granted')}catch{};if(banner)banner.hidden=true;showToast('Preferences saved on this device')});
+$('consentDecline')?.addEventListener('click',()=>{consent='denied';try{localStorage.setItem(CONSENT_KEY,'denied')}catch{};if(banner)banner.hidden=true;showToast('Understood — nothing new will be saved on this device')});
+$('wipeDataButton')?.addEventListener('click',()=>{try{localStorage.removeItem('spark-saved');localStorage.removeItem(CONSENT_KEY)}catch{};consent=null;state.saved=[];renderSaved();renderSaveButton();if(state.current)renderIdea();if(banner)banner.hidden=false;showToast('All local data deleted from this device')});

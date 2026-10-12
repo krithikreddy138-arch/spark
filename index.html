@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#ideaCard">Skip to the idea generator</a>
     <div class="noise" aria-hidden="true"></div>
     <noscript><p style="margin:0;padding:16px;text-align:center;background:#111625;color:#eef3ff;font:13px monospace">SPARK needs JavaScript enabled to generate ideas.</p></noscript>
     <header class="topbar">
@@ -58,7 +59,55 @@
         <div class="saved-list" id="savedList"><div class="empty-state"><span>♡</span><p>Nothing saved yet.</p><small>Bookmark a promising signal and it will appear here.</small></div></div>
       </section>
     </main>
+
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-col">
+        <span class="footer-brand"><span class="brand-mark">✦</span>SPARK</span>
+        <p>A free, offline project idea generator. No accounts, no cookies, no trackers, no hidden fees.</p>
+        <p class="footer-op">Operated by <b>krithikreddy138-arch</b> as a personal, non-commercial project. Not directed at children under 13.</p>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">LEGAL</b>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html#cookies">Cookie Policy</a>
+        <a href="terms.html#refunds">Refund Policy</a>
+        <a href="privacy.html#deletion">Delete your data</a>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">CONTACT &amp; BUSINESS DETAILS</b>
+        <a href="https://github.com/krithikreddy138-arch">Operator — GitHub profile</a>
+        <a href="https://github.com/krithikreddy138-arch/spark/issues">Contact &amp; data requests</a>
+        <a href="terms.html#accessibility">Accessibility statement</a>
+        <button class="footer-legal-button" id="wipeDataButton" type="button">DELETE ALL LOCAL DATA</button>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">CREDITS &amp; LICENCES</b>
+        <p>Typefaces: <b>Space Grotesk</b> &amp; <b>DM Mono</b>, self-hosted under the SIL Open Font License 1.1.</p>
+        <a href="fonts/OFL.txt">View font licence</a>
+        <p class="footer-op">© 2026 SPARK. No stock images or third-party assets are used.</p>
+      </div>
+    </footer>
+
     <div class="toast" id="toast" role="status"></div>
+
+    <section class="consent-banner" id="consentBanner" role="region" aria-label="Privacy and cookie choices" hidden>
+      <div class="consent-copy">
+        <b>PRIVACY CHOICE // NO COOKIES, NO TRACKERS</b>
+        <p>SPARK sets <strong>no cookies</strong> and loads <strong>no third-party scripts</strong>. The only thing stored on this device is your own saved ideas, in local storage. You must be 13 or older to use SPARK.</p>
+        <p>Decline and nothing new will be saved — the site still works, saves just won't persist. <a href="privacy.html#cookies">Read the cookie policy</a>.</p>
+      </div>
+      <div class="consent-actions">
+        <button class="primary-button" id="consentAccept" type="button">ACCEPT &amp; SAVE ON THIS DEVICE</button>
+        <button class="secondary-button" id="consentDecline" type="button">CONTINUE WITHOUT SAVING</button>
+        <a class="privacy-link" href="privacy.html">PRIVACY POLICY</a>
+      </div>
+    </section>
     <script src="app.js"></script>
+    <script>
+      document.querySelectorAll('.footer-op').forEach(function (el) {
+        el.innerHTML = el.innerHTML.replace('© 2026 SPARK', '© ' + new Date().getFullYear() + ' SPARK');
+      });
+    </script>
   </body>
 </html>

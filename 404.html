@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070911" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="That page does not exist. Head back to SPARK and generate your next project idea." />
+    <title>Page not found (404) — SPARK</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070911'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%2355e7df'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .error-wrap{width:min(760px,calc(100% - 44px));margin:0 auto;padding:96px 0 60px;text-align:left}
+      .error-code{font:12px var(--mono);letter-spacing:.16em;color:var(--pink)}
+      .error-wrap h1{font-size:clamp(52px,11vw,104px);line-height:.9;letter-spacing:-.06em;margin:22px 0 18px}
+      .error-wrap h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px var(--purple);text-shadow:0 0 38px rgba(168,120,255,.22)}
+      .error-copy{font-size:17px;line-height:1.6;color:#a5aec0;margin:0 0 30px;max-width:56ch}
+      .error-actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:44px}
+      .error-links{border-top:1px solid var(--line);padding-top:24px}
+      .error-links b{display:block;font:10px var(--mono);letter-spacing:.13em;color:#757f92;margin-bottom:12px}
+      .error-links a{display:inline-block;margin:0 20px 10px 0;color:var(--cyan);font-size:14px;text-decoration:none}
+      .error-links a:hover{text-decoration:underline}
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the message</a>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="SPARK home"><span class="brand-mark">✦</span><span>SPARK</span><small>IDEA ENGINE</small></a>
+      <div class="top-actions"><span class="status-dot"></span><span>SIGNAL LOST</span></div>
+    </header>
+
+    <main id="main" class="error-wrap">
+      <span class="error-code">ERROR 404 // PAGE NOT FOUND</span>
+      <h1>Dead<br /><em>end.</em></h1>
+      <p class="error-copy">This link points somewhere that does not exist — it may have been mistyped, moved, or it never existed. Nothing was lost, and there is nothing to sign up for.</p>
+      <div class="error-actions">
+        <a class="primary-button" href="index.html"><span class="button-icon">✦</span> BACK TO SPARK <span class="button-arrow">↗</span></a>
+        <button class="secondary-button" id="goBack" type="button">GO BACK ONE PAGE</button>
+      </div>
+      <div class="error-links">
+        <b>OR JUMP STRAIGHT TO</b>
+        <a href="index.html">Idea generator</a>
+        <a href="privacy.html">Privacy &amp; cookie policy</a>
+        <a href="terms.html">Terms of service</a>
+        <a href="terms.html#accessibility">Accessibility statement</a>
+        <a href="https://github.com/krithikreddy138-arch/spark/issues">Report a broken link</a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-col">
+        <span class="footer-brand"><span class="brand-mark">✦</span>SPARK</span>
+        <p>A free, offline project idea generator. No accounts, no cookies, no trackers, no hidden fees.</p>
+        <p class="footer-op">Operated by <b>krithikreddy138-arch</b> as a personal, non-commercial project. Not directed at children under 13.</p>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">LEGAL</b>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html#cookies">Cookie Policy</a>
+        <a href="terms.html#refunds">Refund Policy</a>
+        <a href="privacy.html#deletion">Delete your data</a>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">CONTACT &amp; BUSINESS DETAILS</b>
+        <a href="https://github.com/krithikreddy138-arch">Operator — GitHub profile</a>
+        <a href="https://github.com/krithikreddy138-arch/spark/issues">Contact &amp; data requests</a>
+        <a href="terms.html#accessibility">Accessibility statement</a>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">CREDITS &amp; LICENCES</b>
+        <p>Typefaces: <b>Space Grotesk</b> &amp; <b>DM Mono</b>, self-hosted under the SIL Open Font License 1.1.</p>
+        <a href="fonts/OFL.txt">View font licence</a>
+        <p class="footer-op">© 2026 SPARK. No stock images or third-party assets are used.</p>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('.footer-op').forEach(function (el) {
+        el.innerHTML = el.innerHTML.replace('© 2026 SPARK', '© ' + new Date().getFullYear() + ' SPARK');
+      });
+      document.getElementById('goBack').addEventListener('click', function () {
+        if (history.length > 1) { history.back(); } else { window.location.href = 'index.html'; }
+      });
+    </script>
+  </body>
+</html>

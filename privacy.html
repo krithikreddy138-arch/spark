@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070911" />
+    <meta name="description" content="SPARK privacy policy and cookie policy. No cookies, no trackers, no accounts, no third-party scripts. Everything stays on your device." />
+    <title>Privacy &amp; Cookie Policy — SPARK</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070911'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%2355e7df'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#legal">Skip to the policy</a>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="SPARK home"><span class="brand-mark">✦</span><span>SPARK</span><small>IDEA ENGINE</small></a>
+      <div class="top-actions"><span class="status-dot"></span><span>LOCAL MODE</span><a class="back-link" href="index.html">← BACK TO SPARK</a></div>
+    </header>
+
+    <main id="legal" class="legal-wrap">
+      <span class="section-kicker">LEGAL // PRIVACY &amp; COOKIES</span>
+      <h1>Privacy &amp; Cookie Policy</h1>
+      <p class="updated">LAST UPDATED: 11 OCTOBER 2026 · OPERATOR: krithikreddy138-arch · APPLIES TO: spark-krithikreddy138-8507.vercel.app</p>
+
+      <div class="callout">
+        <b>The short version:</b> SPARK has no accounts, no analytics, no advertising, no cookies and no third-party scripts. We do not receive, collect, sell or share any personal data. The only thing SPARK stores is your saved ideas, and that stays in your own browser.
+      </div>
+
+      <h2>1. What we collect</h2>
+      <p>We collect nothing from you. There is no sign-up, no login, no newsletter form, no contact form and no payment step, so there is no point at which you give us personal data.</p>
+      <p>SPARK makes <b>no network requests</b> after the page loads. There is no analytics beacon, no error reporter, no font CDN and no advertising tag. We could not build a profile of you even if we wanted to, because no data leaves your browser.</p>
+
+      <h2>2. Data minimisation — what is stored, and where</h2>
+      <p>Under data-minimisation principles we store only what the product actually needs. That is two keys in your browser's <code>localStorage</code>, both of which you control:</p>
+      <div class="table-scroll"><table class="legal-table">
+        <thead>
+          <tr><th>Key</th><th>Contents</th><th>Why</th><th>How long</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>spark-saved</code></td>
+            <td>A list of idea numbers you bookmarked (for example <code>[26,38]</code>)</td>
+            <td>So your saved collection survives a page reload</td>
+            <td>Until you delete it</td>
+          </tr>
+          <tr>
+            <td><code>spark-consent</code></td>
+            <td>One word: <code>granted</code> or <code>denied</code></td>
+            <td>So we can remember your privacy choice and stop asking</td>
+            <td>Until you delete it</td>
+          </tr>
+        </tbody>
+      </table></div>
+      <p>No names, email addresses, IP addresses, device identifiers, location, or browser fingerprint is collected or transmitted by SPARK. Idea numbers are not linked to any identity — there is nothing on our side to link them to.</p>
+
+      <h2 id="cookies">3. Cookie policy</h2>
+      <p><b>SPARK sets no cookies.</b> Not first-party, not third-party, not "strictly necessary", not session or persistent cookies. You can confirm this yourself: open your browser's developer tools, look at the Cookies and Storage panels, and you will see nothing attributed to this site.</p>
+      <p>Because there are no cookies, there is nothing to opt out of and no cookie wall to bypass. When the consent banner offers <b>CONTINUE WITHOUT SAVING</b>, that choice genuinely disables local storage rather than being a decorative button.</p>
+      <div class="table-scroll"><table class="legal-table">
+        <thead>
+          <tr><th>Technology</th><th>Used by SPARK?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cookies</td><td>No</td></tr>
+          <tr><td>Local storage</td><td>Yes — two keys, listed above</td></tr>
+          <tr><td>Session storage</td><td>No</td></tr>
+          <tr><td>IndexedDB</td><td>No</td></tr>
+          <tr><td>Service workers / cache</td><td>No</td></tr>
+          <tr><td>Tracking pixels / beacons</td><td>No</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="third-parties">4. Third-party SDK audit</h2>
+      <p>We audited the shipped site for third-party code. The result: <b>there are none.</b> Every file SPARK loads is served from this same site.</p>
+      <div class="table-scroll"><table class="legal-table">
+        <thead>
+          <tr><th>Category</th><th>Common examples</th><th>SPARK</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Analytics</td><td>Google Analytics, Mixpanel</td><td>None</td></tr>
+          <tr><td>Error monitoring</td><td>Sentry, LogRocket</td><td>None</td></tr>
+          <tr><td>Advertising / retargeting</td><td>Meta Pixel, Google Ads</td><td>None</td></tr>
+          <tr><td>Session replay</td><td>Hotjar, FullStory</td><td>None</td></tr>
+          <tr><td>Tag managers</td><td>Google Tag Manager</td><td>None</td></tr>
+          <tr><td>CDN-hosted assets</td><td>Google Fonts, jsDelivr</td><td>None — fonts are self-hosted</td></tr>
+          <tr><td>Fonts</td><td>Google Fonts CDN</td><td>Space Grotesk &amp; DM Mono, downloaded and served from this site</td></tr>
+          <tr><td>Infrastructure</td><td>Vercel, GitHub</td><td>Hosting only — see note below</td></tr>
+        </tbody>
+      </table></div>
+      <p><b>About our host:</b> SPARK is a static site hosted on Vercel, with its source published on GitHub. Vercel necessarily processes your IP address and browser user agent to deliver the page, in the same way any web server does. We do not use Vercel Analytics, Speed Insights or any of its tracking products, and we have no access to or interest in those delivery logs. GitHub is only linked, not embedded — following a link to GitHub means you are browsing GitHub under its own privacy policy.</p>
+
+      <h2 id="children">5. Children's data and age consent</h2>
+      <p>SPARK is <b>not directed at children under 13</b>, and we do not knowingly collect personal data from them. Because we collect no personal data at all, there is nothing of theirs for us to hold.</p>
+      <div class="callout warn">
+        <b>Age requirement:</b> you must be <b>13 or older</b> to use SPARK. This is stated in the consent banner before you interact with the site. If you are a parent or guardian and believe a child under 13 has used SPARK, contact us and we will help — though in practice, deleting the browser's local storage removes everything associated with their use.
+      </div>
+      <p>For teenagers aged 13 to 17, the same applies: we hold no data, and any data they store stays on their own device.</p>
+
+      <h2 id="deletion">6. Data deletion requests</h2>
+      <p>You can erase everything SPARK has ever stored about you in one step, right now, without contacting anyone.</p>
+      <ul>
+        <li><b>In the product:</b> scroll to the footer and press <b>DELETE ALL LOCAL DATA</b>. This immediately clears both keys above, empties your saved collection, and re-shows the consent banner.</li>
+        <li><b>In your browser:</b> open site settings and clear data for this site, or run <code>localStorage.clear()</code> in the developer console.</li>
+      </ul>
+      <p>Because SPARK holds no server-side copy of anything, deleting on your device is a complete deletion — there is no backup, archive or shadow record to request afterwards. There is no retention period to wait out.</p>
+      <p>If you would like written confirmation or have any other request, open an issue on our <a href="https://github.com/krithikreddy138-arch/spark/issues">contact page</a> and we will respond.</p>
+
+      <h2 id="emails">7. Emails and unsubscribe</h2>
+      <p>SPARK sends <b>no emails</b>. There is no newsletter, no marketing list, no account notification and no receipt, so there is nothing to unsubscribe from and no unsubscribe link is needed. If we ever add email, every message will carry a working one-click unsubscribe link and we will update this policy before doing so.</p>
+
+      <h2>8. Legal bases and your rights</h2>
+      <p>Since no personal data is processed, most statutory data-protection rights have nothing to operate on. Still, wherever you live, you retain the right to ask us what we hold about you — the honest answer is nothing — and the right to have it deleted, which the button in section 6 already achieves.</p>
+      <ul>
+        <li><b>GDPR / UK GDPR:</b> no personal data is processed, so there is no lawful basis to document and no supervisory authority to complain to us over. You may still contact your local authority.</li>
+        <li><b>CCPA / CPRA:</b> we do not sell, share or "share" for cross-context behavioural advertising any personal information, and we have no notice at collection to give because there is nothing to collect.</li>
+        <li><b>POPIA, PIPEDA, PDPA and similar:</b> the same position — no personal data is processed.</li>
+      </ul>
+
+      <h2>9. Changes to this policy</h2>
+      <p>If SPARK's behaviour ever changes — for example if an account system or analytics were added — this policy will be updated before, not after, that change ships, and the date at the top of the page will change with it. Any significant change will also be surfaced in the interface itself. The current version is always the one published with the site.</p>
+
+      <h2 id="contact">10. Contact and business details</h2>
+      <div class="table-scroll"><table class="legal-table">
+        <tbody>
+          <tr><th>Operator</th><td><b>krithikreddy138-arch</b> — an individual, operating SPARK as a personal project</td></tr>
+          <tr><th>Business type</th><td>Personal, non-commercial project. Not a registered company.</td></tr>
+          <tr><th>Contact</th><td><a href="https://github.com/krithikreddy138-arch/spark/issues">github.com/krithikreddy138-arch/spark/issues</a> — open an issue for any privacy or data question</td></tr>
+          <tr><th>Operator profile</th><td><a href="https://github.com/krithikreddy138-arch">github.com/krithikreddy138-arch</a></td></tr>
+          <tr><th>Product</th><td>SPARK — project idea generator</td></tr>
+          <tr><th>Related policies</th><td><a href="terms.html">Terms of Service</a> · <a href="terms.html#refunds">Refund Policy</a> · <a href="terms.html#accessibility">Accessibility Statement</a></td></tr>
+        </tbody>
+      </table></div>
+      <p><a class="back-link" href="index.html">← BACK TO SPARK</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-col">
+        <span class="footer-brand"><span class="brand-mark">✦</span>SPARK</span>
+        <p>A free, offline project idea generator. No accounts, no cookies, no trackers, no hidden fees.</p>
+        <p class="footer-op">Operated by <b>krithikreddy138-arch</b> as a personal, non-commercial project. Not directed at children under 13.</p>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">LEGAL</b>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html#cookies">Cookie Policy</a>
+        <a href="terms.html#refunds">Refund Policy</a>
+        <a href="privacy.html#deletion">Delete your data</a>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">CONTACT &amp; BUSINESS DETAILS</b>
+        <a href="https://github.com/krithikreddy138-arch">Operator — GitHub profile</a>
+        <a href="https://github.com/krithikreddy138-arch/spark/issues">Contact &amp; data requests</a>
+        <a href="terms.html#accessibility">Accessibility statement</a>
+      </div>
+      <div class="footer-col">
+        <b class="footer-head">CREDITS &amp; LICENCES</b>
+        <p>Typefaces: <b>Space Grotesk</b> &amp; <b>DM Mono</b>, self-hosted under the SIL Open Font License 1.1.</p>
+        <a href="fonts/OFL.txt">View font licence</a>
+        <p class="footer-op">© 2026 SPARK. No stock images or third-party assets are used.</p>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('.footer-op').forEach(function (el) {
+        el.innerHTML = el.innerHTML.replace('© 2026 SPARK', '© ' + new Date().getFullYear() + ' SPARK');
+      });
+    </script>
+  </body>
+</html>
